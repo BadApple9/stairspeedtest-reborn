@@ -293,6 +293,10 @@ bool killProgram(std::string program)
 #else
     //if(!feof(pPipe))
     //pclose(pPipe);
+    if(program.compare("trojan") == 0)
+    {
+        return true;
+    }
     program = "pkill -f " + program;
     system(program.data());
     return true;
